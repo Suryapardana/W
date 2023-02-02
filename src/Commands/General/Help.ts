@@ -7,7 +7,8 @@ import { IArgs } from '../../Types'
     cooldown: 10,
     exp: 20,
     usage: 'help || help <command_name>',
-    category: 'general'
+    category: 'general',
+    react: '🥰'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
@@ -34,7 +35,7 @@ export default class extends BaseCommand {
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
             text += `\n\n📕 *Note:* Use ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help hello*`
-            return void (await M.reply(text, 'text', undefined, undefined, undefined, [M.sender.jid]))
+            return void (await M.reply(react, text, 'text', undefined, undefined, undefined, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
             const command = this.handler.commands.get(cmd) || this.handler.aliases.get(cmd)
