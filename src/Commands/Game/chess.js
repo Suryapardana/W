@@ -7,7 +7,7 @@ import CIG from 'chess-image-generator-ts'
 
 @Command('chess', {
     description: 'Play Chess ♟️ on WhatsApp 🤯',
-    category: 'games',
+    category: 'game',
     usage: `${client.config.prefix}chess`,
     cooldown: 5,
     exp: 10,
